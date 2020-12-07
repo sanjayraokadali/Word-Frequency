@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'freqApp/BasePage.html' %}
+
+{% block bodyblock %}
+<h2> FrequencyPage </h2>
+<form action=" {% url 'freqApp:resultspage' %} "  method="POST">
+  {% csrf_token %}
+  <label for="url">URL</label>
+  <input type="url" name="url" placeholder="Paste the URL HERE">
+
+  <input type="submit" name="" value="Count Frequency">
+</form>
+
+{% endblock %}
