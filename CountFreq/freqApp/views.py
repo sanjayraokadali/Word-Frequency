@@ -20,6 +20,8 @@ def FrequencyPage(request):
 
 def ResultsPage(request):
 
+    cond = False
+
     url =''
     text=''
 
@@ -40,7 +42,10 @@ def ResultsPage(request):
 
             punc = string.punctuation
 
-            punc+= ''
+            punc = list(punc)
+
+            punc.append('')
+            punc.append('--')
 
             for alpha in temp_text:
 
@@ -101,7 +106,13 @@ def ResultsPage(request):
             used_url.save()
 
         else:
+            cond = True
+            for obj in UsedURL.objects.all():
 
-            return HttpResponse('URL USED Already!')
+                if obj.url == url:
+                    print(obj.url)
+                    break
 
-    return render(request,'freqApp/ResultsPage.html',{'url':used_url})
+            return render(request,'freqApp/ResultsPage.html',{'url':obj,'message':'Hi There! You have already checked this URL'})
+
+    return render(request,'freqApp/ResultsPage.html',{'url':used_url,'message':'Thank you for using this App!'})

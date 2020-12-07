@@ -2,13 +2,22 @@
 {% extends 'freqApp/BasePage.html' %}
 
 {% block bodyblock %}
-<h2> FrequencyPage </h2>
-<form action=" {% url 'freqApp:resultspage' %} "  method="POST">
-  {% csrf_token %}
-  <label for="url">URL</label>
-  <input type="url" name="url" placeholder="Paste the URL HERE">
+<h2 style=" color: white;" > Paste A URL</h2>
+<div class="jumbotron" style=" border-radius: 50px; background-color: rgba(654, 122, 212, 0.4); " >
+  <form class="form-inline" action=" {% url 'freqApp:resultspage' %} "  method="POST">
+      {% csrf_token %}
+    <div class="form-group mb-2">
+      <label style=" color: white;" for="">Paste a URL Here</label>
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <input type="url" style=" width: 500px; "  name="url" class="form-control" id="inputPassword2" placeholder="URL">
+    </div>
+    <br>
+      <input type="submit" class="btn btn-dark" style=" border-radius: 50px;"  name="" value="Count Frequency">
+  </form>
+</div>
 
-  <input type="submit" name="" value="Count Frequency">
-</form>
+
+
 
 {% endblock %}

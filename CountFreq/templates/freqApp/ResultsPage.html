@@ -2,30 +2,107 @@
 {% extends 'freqApp/BasePage.html' %}
 
 {% block bodyblock %}
-  <h2>ResultsPage</h2>
-  <a href="{% url 'basepage' %}">Home!</a><br><br>
-
-  {{ url.word1}}
-  {{url.word1count}} <br>
-  {{ url.word2}}
-  {{url.word2count}} <br>
-  {{ url.word3}}
-  {{url.word3count}} <br>
-  {{ url.word4}}
-  {{url.word4count}} <br>
-  {{ url.word5}}
-  {{url.word5count}} <br>
 
 
-  {{ url.word6}}
-  {{url.word6count}} <br>
-  {{ url.word7}}
-  {{url.word7count}} <br>
-  {{ url.word8}}
-  {{url.word8count}} <br>
-  {{ url.word9}}
-  {{url.word9count}} <br>
-  {{ url.word10}}
-  {{url.word10count}} <br>
+  <div class="media" style=" text-align: center; background-color: rgba(420, 450, 264, 0.5); " >
+  <img src="https://files.realpython.com/media/Three-Ways-of-Storing-and-Accessing-Lots-of-Images-in-Python_Watermarked.e0e46e94536c.jpg" style=" border-radius: 50px; width:254px; height:100px; " class="mr-3" alt="...">
+  <div class="media-body">
+    <h3 class="mt-0"> <strong> {{ message }} <br> <br> The Results are Below: </strong> </h3>
+
+  </div>
+</div>
+
+      <div class="jumbotron" style=" font-size: 30px;" >
+        <div class="row">
+          <div class="col-sm">
+          TOP 10 WORDS
+          </div>
+          <div class="col-sm">
+          WORD COUNT
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-sm">
+        {{ url.word1 }}
+        </div>
+        <div class="col-sm">
+        {{url.word1count}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+        {{url.word2}}
+        </div>
+        <div class="col-sm">
+         {{ url.word2count }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+        {{url.word3}}
+        </div>
+        <div class="col-sm">
+        {{url.word3count}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+        {{url.word4}}
+        </div>
+        <div class="col-sm">
+          {{url.word4count}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+        {{url.word5}}
+        </div>
+        <div class="col-sm">
+        {{url.word5count}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          {{url.word6}}
+        </div>
+        <div class="col-sm">
+        {{ url.word6count }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          {{url.word7}}
+        </div>
+        <div class="col-sm">
+          {{url.word7count}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          {{url.word8}}
+        </div>
+        <div class="col-sm">
+          {{url.word8count}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          {{url.word9}}
+        </div>
+        <div class="col-sm">
+          {{url.word9count}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          {{url.word10}}
+        </div>
+        <div class="col-sm">
+          {{url.word10count}}
+        </div>
+      </div>
+      </div>
+      <a class="btn btn-danger" href="{% url 'freqApp:frequencypage' %}">Check Some More!</a>
+      <a class="btn btn-warning" href="{% url 'basepage' %}">Go Back Home!</a><br><br>
 
 {% endblock %}
